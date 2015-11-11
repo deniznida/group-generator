@@ -39,7 +39,9 @@
                               { name: "Jim Rectenwald", cohort_id: cohort.id}, 
                               { name: "Natalie Coley", cohort_id: cohort.id}, 
                               { name: "Dan Glatstein", cohort_id: cohort.id}])
-group_types = GroupTypes.create([ { type: "Table Group"}, 
-                                  { type: "MeetUp Group"}, 
-                                  { type: "PairProgram Group"},
-                                  { type: "Project Group"}]) 
+  table_group = GroupType.create({ type: "Table Group"}) 
+  meetup_group = GroupType.create({ type: "MeetUp Group"}) 
+  pairprogram_group = GroupType.create({ type: "PairProgram Group"})
+  project_group = GroupType.create({ type: "Project Group"})
+
+ 
