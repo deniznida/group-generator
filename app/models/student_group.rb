@@ -1,4 +1,4 @@
 class StudentGroup < ActiveRecord::Base
-  has_many :groups
-  has_many :students
+  belongs_to :group
+  belongs_to :student
 end
