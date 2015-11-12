@@ -1,0 +1,13 @@
+<%= form_for @new_cohort do |f|  %>
+
+
+<% end %>
+
+
+
+
+
+
+<% @cohorts.each do |cohort| %>
+  <%= link_to(cohort.name, cohort_path(cohort)) %>
+<% end %>
