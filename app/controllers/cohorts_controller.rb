@@ -2,7 +2,6 @@ class CohortsController < ApplicationController
 
   def index
     @cohorts = Cohort.all
-    @new_cohort = Cohort.create
   end
 
   def show
@@ -36,7 +35,7 @@ class CohortsController < ApplicationController
   private
   
   def cohort_params
-    params.require(:cohort).permit(:name, :roster_csv)
+    params.require(:cohort).permit(:name)
   end
 
 end

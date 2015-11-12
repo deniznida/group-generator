@@ -1,13 +1,16 @@
-<%= form_for @new_cohort do |f|  %>
-
-
+<%= form_for Cohort.new do |f|  %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
 <% end %>
 
 
 
 
-
+<ul>
 
 <% @cohorts.each do |cohort| %>
-  <%= link_to(cohort.name, cohort_path(cohort)) %>
+ <li> <%= link_to(cohort.name, cohort_path(cohort)) %></li>
 <% end %>
+
+</ul>
