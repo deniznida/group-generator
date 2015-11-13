@@ -41,28 +41,29 @@ tatsiana = Student.create({ name: "Tatsiana Borschch", cohort_id: cohort.id})
 heather = Student.create({ name: "Heather Lim", cohort_id: cohort.id})
 lesly = Student.create({ name: "Lesly Brezillien", cohort_id: cohort.id})
 
+table_group_type = GroupType.create({ name: "Table Group"}) 
+meetup_group_type = GroupType.create({ name: "MeetUp Group"}) 
+pairprogram_group_type = GroupType.create({ name: "PairProgram Group"})
+project_group_type = GroupType.create({ name: "Project Group"})
 
+table_group = Group.create({group_type_id: table_group_type.id})
 
+meetup_group = Group.create({group_type_id: meetup_group_type.id})
+meetup_group2 = Group.create({group_type_id: meetup_group_type.id})
 
-  table_group_type = GroupType.create({ name: "Table Group"}) 
-  meetup_group_type = GroupType.create({ name: "MeetUp Group"}) 
-  pairprogram_group_type = GroupType.create({ name: "PairProgram Group"})
-  project_group_type = GroupType.create({ name: "Project Group"})
+pairprogramming_group = Group.create({group_type_id: pairprogram_group_type.id})
+pairprogramming_group2 = Group.create({group_type_id: pairprogram_group_type.id})
+pairprogramming_group3 = Group.create({group_type_id: pairprogram_group_type.id})
+pairprogramming_group4 = Group.create({group_type_id: pairprogram_group_type.id})
 
- table_group = Group.create({group_type_id: table_group_type.id})
- meetup_group = Group.create({group_type_id: meetup_group_type.id})
- meetup_group2 = Group.create({group_type_id: meetup_group_type.id})
- pairprogramming_group = Group.create({group_type_id: pairprogram_group_type.id})
- pairprogramming_group2 = Group.create({group_type_id: pairprogram_group_type.id})
- pairprogramming_group3 = Group.create({group_type_id: pairprogram_group_type.id})
- pairprogramming_group4 = Group.create({group_type_id: pairprogram_group_type.id})
- project_group = Group.create({group_type_id: project_group_type.id})
- project_group2 = Group.create({group_type_id: project_group_type.id})
+project_group = Group.create({group_type_id: project_group_type.id})
+project_group2 = Group.create({group_type_id: project_group_type.id})
 
  StudentGroup.create([{group_id: table_group.id, student_id: dan.id },
                       {group_id: table_group.id, student_id: natalie.id},
                       {group_id: table_group.id, student_id: jim.id},
                       {group_id: table_group.id, student_id: roslynn.id},
+
                       {group_id: table_group.id, student_id: ben.id},
                       {group_id: table_group.id, student_id: amanda.id},
                       {group_id: table_group.id, student_id: meredith.id},
@@ -77,10 +78,13 @@ lesly = Student.create({ name: "Lesly Brezillien", cohort_id: cohort.id})
 
                       {group_id: pairprogramming_group.id, student_id: jessie.id},
                       {group_id: pairprogramming_group.id, student_id: michaelb.id},
+
                       {group_id: pairprogramming_group2.id, student_id: korey.id},
                       {group_id: pairprogramming_group2.id, student_id: avi.id},
+
                       {group_id: pairprogramming_group3.id, student_id: yifan.id},
                       {group_id: pairprogramming_group3.id, student_id: kj.id},
+
                       {group_id: pairprogramming_group4.id, student_id: madeline.id},
                       {group_id: pairprogramming_group4.id, student_id: austin.id},
                       
@@ -88,6 +92,7 @@ lesly = Student.create({ name: "Lesly Brezillien", cohort_id: cohort.id})
                       {group_id: project_group.id, student_id: jay.id},
                       {group_id: project_group.id, student_id: hilary.id},
                       {group_id: project_group.id, student_id: hide.id},
+
                       {group_id: project_group2.id, student_id: mattm.id},
                       {group_id: project_group2.id, student_id: tracy.id},
                       {group_id: project_group2.id, student_id: jeff.id}])

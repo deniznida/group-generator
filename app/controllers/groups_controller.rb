@@ -1,15 +1,8 @@
 class GroupsController < ApplicationController
 
-  def index
-
-  end
-
-  def show
-
-  end
-
   def new
-
+    @cohorts = Cohort.all
+    @group_types = GroupType.all
   end
 
   def edit
@@ -17,14 +10,10 @@ class GroupsController < ApplicationController
   end
 
   def create
-
+    
   end
 
   def update
-
-  end
-
-  def destroy
 
   end
 
