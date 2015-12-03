@@ -15,9 +15,12 @@ class CohortsController < ApplicationController
 
   def create
     @cohort = Cohort.new(cohort_params)
+    binding.pry
     if @cohort.save
+      binding.pry
       flash[:success] = "Cohort successfully created!"
     else
+      binding.pry
       flash[:alert] = @cohort.errors.full_messages.to_sentence
     end
     redirect_to(:back)
