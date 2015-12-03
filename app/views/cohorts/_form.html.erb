@@ -1,0 +1,9 @@
+<%= form_for @cohort do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :roster_csv %>
+  <%= f.file_field :roster_csv %>
+
+  <%= f.submit %>
+<% end %>

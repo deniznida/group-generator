@@ -2,6 +2,7 @@ class CohortsController < ApplicationController
 
   def index
     @cohorts = Cohort.all
+    @cohort = Cohort.new
   end
 
   def show
@@ -10,7 +11,6 @@ class CohortsController < ApplicationController
   end
 
   def edit
-
   end
 
   def create
@@ -23,19 +23,9 @@ class CohortsController < ApplicationController
     redirect_to(:back)
   end
 
-  def update
-
-  end
-
-  def destroy
-
-  end
-
-
   private
-  
-  def cohort_params
-    params.require(:cohort).permit(:name)
-  end
+    def cohort_params
+      params.require(:cohort).permit(:name)
+    end
 
 end

@@ -13,10 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20151110191836) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cohorts", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "roster_csv_file_name"
+    t.string   "roster_csv_content_type"
+    t.integer  "roster_csv_file_size"
+    t.datetime "roster_csv_updated_at"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "group_types", force: :cascade do |t|
