@@ -16,16 +16,16 @@ class CohortsController < ApplicationController
   def create
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
-      flash[:success] = "Cohort successfully created!"
+      flash[:message] = "Cohort successfully created!"
     else
-      flash[:alert] = @cohort.errors.full_messages.to_sentence
+      flash[:message] = @cohort.errors.full_messages.to_sentence
     end
     redirect_to(:back)
   end
 
   private
     def cohort_params
-      params.require(:cohort).permit(:name)
+      params.require(:cohort).permit(:name, :roster_csv)
     end
 
 end
