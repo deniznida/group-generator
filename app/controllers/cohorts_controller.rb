@@ -15,7 +15,6 @@ class CohortsController < ApplicationController
 
   def create
     @cohort = Cohort.new(cohort_params)
-    binding.pry
     if @cohort.save
       binding.pry
       flash[:success] = "Cohort successfully created!"
@@ -28,7 +27,7 @@ class CohortsController < ApplicationController
 
   private
     def cohort_params
-      params.require(:cohort).permit(:name)
+      params.require(:cohort).permit(:name, :roster_csv)
     end
 
 end
