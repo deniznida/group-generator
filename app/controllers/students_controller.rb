@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @cohort = @student.cohort
   end
 
   def new

@@ -1,3 +1,7 @@
-<%= @student.name  %>
-
-<%= @student.email %>
+<h1>Name:</h1>  <%= @student.name  %>
+<p>
+<h3>email:</h3><%= @student.email %>
+<p>
+<h3>Github:</h3><%= @student.github_username %>
+<p>
+<h3>Cohort:</h3><%= link_to(@cohort.name, cohort_path(@cohort)) %>
