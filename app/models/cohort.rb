@@ -11,12 +11,14 @@ class Cohort < ActiveRecord::Base
   def create_or_update_user_from_csv(file)
     CSV.foreach(file.path, headers: true) do |row|
     
-      student = Student.where(github_username: row["github_username"]).first_or_initialize
+      if (row["first_name"])
+        student = Student.where(github_username: row["github_username"]).first_or_initialize
       
-      name = "#{row["first_name"]} #{row["last_name"]}"
-      email = row["email"]
-      
-      student.update(name: name, email: email, cohort_id: self.id)
+        name = "#{row["first_name"].capitalize} #{row["last_name"].capitalize}"
+        email = row["email"]
+
+        student.update(name: name, email: email, cohort_id: self.id)
+      end
     end  
   end
 end
