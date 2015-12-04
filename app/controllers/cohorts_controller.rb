@@ -17,6 +17,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
       flash[:message] = "Cohort successfully created!"
+      @cohort.create_or_update_user_from_csv(cohort_params[:roster_csv])
     else
       flash[:message] = @cohort.errors.full_messages.to_sentence
     end
