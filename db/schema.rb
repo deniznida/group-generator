@@ -18,12 +18,8 @@ ActiveRecord::Schema.define(version: 20151110191836) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string   "name"
-    t.string   "roster_csv_file_name"
-    t.string   "roster_csv_content_type"
-    t.integer  "roster_csv_file_size"
-    t.datetime "roster_csv_updated_at"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "group_types", force: :cascade do |t|
@@ -48,9 +44,10 @@ ActiveRecord::Schema.define(version: 20151110191836) do
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "github_username"
     t.integer  "cohort_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
