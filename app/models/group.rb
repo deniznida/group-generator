@@ -5,14 +5,15 @@ class Group < ActiveRecord::Base
 
   def self.generate_groups(students, number_of_groups, people_per_group)
     binding.pry
-    shuffled_students_array = students.shuffle 
+    students_array = students
 
-
-
-    while shuffled_students_array.length > 0
+    while students_array.length > 0
       new_group = Group.new
-      shuffled_students_array.pluck(people_per_group).each do |person|
-        binding.pry
+
+      sample_group = students_array.sample(people_per_group)
+      sample_group.each do |student| 
+        students_array.delete student
+        new_group.students << student
       end
 
     end
