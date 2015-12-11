@@ -1,0 +1,6 @@
+<%= form_tag("/groups", method:"POST") do %>
+  <%= label_tag :number, "Select GroupType" %>
+  <%= select_tag "group_types", options_from_collection_for_select(@group_types, "id", "name") %></br>
+  <%= submit_tag "Submit" %>
+  <%= hidden_field_tag "cohort", @cohort.id %>
+<% end %>

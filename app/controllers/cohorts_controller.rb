@@ -8,6 +8,7 @@ class CohortsController < ApplicationController
   def show
     @cohort = Cohort.find(params[:id])
     @students = @cohort.students.order('name')
+    @group_types = GroupType.all
   end
 
   def edit
