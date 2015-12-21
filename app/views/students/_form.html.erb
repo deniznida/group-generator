@@ -1,0 +1,16 @@
+<p><%= flash[:message] %></p>
+
+
+<%= form_for @student do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :github_username %>
+  <%= f.text_field :github_username %>
+
+
+  <%= f.submit %>
+<% end %>
