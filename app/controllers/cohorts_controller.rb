@@ -10,9 +10,6 @@ class CohortsController < ApplicationController
     @students = @cohort.students.order('name')
   end
 
-  def edit
-  end
-
   def create
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
@@ -22,6 +19,15 @@ class CohortsController < ApplicationController
       flash[:message] = @cohort.errors.full_messages.to_sentence
     end
     redirect_to(:back)
+  end
+
+  def edit
+    @cohort = Cohort.find(params[:id])
+  end
+
+  def update
+    @cohort.update(cohort_params)
+    redirect_to(cohort_path(@cohort))
   end
 
   def destroy
