@@ -24,6 +24,11 @@ class CohortsController < ApplicationController
     redirect_to(:back)
   end
 
+  def destroy
+    @cohort = Cohort.find(params[:id])
+    @cohrot.destroy
+  end
+
   private
     def cohort_params
       params.require(:cohort).permit(:name, :roster_csv)
