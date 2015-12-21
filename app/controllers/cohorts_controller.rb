@@ -12,11 +12,15 @@ class CohortsController < ApplicationController
 
   def create
     @cohort = Cohort.new(cohort_params)
-    if @cohort.save
-      flash[:message] = "Cohort successfully created!"
-      @cohort.create_or_update_user_from_csv(cohort_params[:roster_csv])
+    if params[:cohort][:roster_csv] == nil
+      flash[:message] = "Couldn't create Cohort without csv file"
     else
-      flash[:message] = @cohort.errors.full_messages.to_sentence
+      if @cohort.save
+        flash[:message] = "Cohort successfully created!"
+        @cohort.create_or_update_user_from_csv(cohort_params[:roster_csv])
+      else
+        flash[:message] = @cohort.errors.full_messages.to_sentence
+      end
     end
     redirect_to(:back)
   end
