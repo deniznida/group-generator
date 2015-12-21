@@ -5,7 +5,7 @@ class Cohort < ActiveRecord::Base
   has_many :groups, :through => :students
 
   validates :name, :presence => true, allow_blank:false, :uniqueness => true, length: { maximum: 50 }
-  
+
   attr_writer :roster_csv
 
   def create_or_update_user_from_csv(file)

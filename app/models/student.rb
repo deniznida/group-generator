@@ -4,4 +4,6 @@ class Student < ActiveRecord::Base
   has_many :groups, :through => :student_groups
 
    validates :name, presence: true
+
+
 end
