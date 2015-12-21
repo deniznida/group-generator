@@ -11,7 +11,11 @@ class GroupsController < ApplicationController
 
   def create
     cohort = Cohort.find(params[:cohort])
-    students = cohort.students
+    students_objects = cohort.students
+    
+    students = []
+    students_objects.each {|student| students << student}
+
     student_count = cohort.students.size
 
     number_of_groups = 0
