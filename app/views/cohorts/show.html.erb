@@ -5,6 +5,7 @@
     <% @students.each do |student| %>
     <li><%= link_to(student.name, student_path(student)) %></li>
     <% end %>
+    <br>
+    <%= link_to 'edit', edit_cohort_path(@cohort) %>
+    <%= link_to 'delete', cohort_path(@cohort), method: 'delete', data: {confirm: "Are you sure you want to delete this cohort?"} %>
 </ul>
-
-<%= render 'create' %>

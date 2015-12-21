@@ -5,3 +5,7 @@
 <h3>Github:</h3><%= @student.github_username %>
 <p>
 <h3>Cohort:</h3><%= link_to(@cohort.name, cohort_path(@cohort)) %>
+<br>
+<br>
+<%= link_to 'edit', edit_student_path(@student) %>
+<%= link_to 'delete', student_path(@student), method: 'delete', data: {confirm: "Are you sure you want to delete this student?"} %>

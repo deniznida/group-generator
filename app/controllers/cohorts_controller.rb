@@ -8,10 +8,6 @@ class CohortsController < ApplicationController
   def show
     @cohort = Cohort.find(params[:id])
     @students = @cohort.students.order('name')
-    @group_types = GroupType.all
-  end
-
-  def edit
   end
 
   def create
@@ -23,6 +19,22 @@ class CohortsController < ApplicationController
       flash[:message] = @cohort.errors.full_messages.to_sentence
     end
     redirect_to(:back)
+  end
+
+  def edit
+    @cohort = Cohort.find(params[:id])
+  end
+
+  def update
+    @cohort = Cohort.find(params[:id])
+    @cohort.update(cohort_params)
+    redirect_to(cohort_path(@cohort))
+  end
+
+  def destroy
+    @cohort = Cohort.find(params[:id])
+    @cohort.destroy
+    redirect_to(:root)
   end
 
   private
