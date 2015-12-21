@@ -17,7 +17,9 @@ class StudentsController < ApplicationController
 
   def destroy
     @student = Student.find(params[:id])
+    @cohort = @student.cohort
     @student.destroy
+    redirect_to(cohort_path(@cohort))
   end
 
   private
