@@ -8,11 +8,11 @@
         <th>Cohort</th>
         <th>edit/delete</th>
       </tr>
-    </thead>
+    </thead> 
     <tbody>
       <td><%= @student.name  %></td>
       <td><%= @student.email %></td>
-      <td><%= @student.github_username %></td>
+      <td><%= link_to @student.github_username, "http://www.github.com/#{@student.github_username}", :target => "_blank" %></td>
       <td><%= link_to(@cohort.name, cohort_path(@cohort)) %></td>
       <td id="edit-or-delete-user">
       <%= link_to 'edit', edit_student_path(@student), class: 'btn btn-default btn-xs' %>
