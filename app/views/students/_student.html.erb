@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to student.name, student_path(student) %></td>
+  <td><%= student.email %></td>
+  <td><%= student.github_username %></td>
+
+  <td id="edit-or-delete-user">
+    <%= link_to 'edit', edit_student_path(student), class: 'btn btn-default btn-xs' %>
+    <%= link_to 'delete', student_path(student), class: 'btn btn-default btn-xs', method: 'delete', data: {confirm: "Are you sure you want to delete this student?"} %>
+  </td>
+</tr>
