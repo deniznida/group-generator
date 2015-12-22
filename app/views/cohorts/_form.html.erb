@@ -1,12 +1,25 @@
 <p><%= flash[:message] %></p>
+<div class="well">
 
+<%= form_for @cohort, :html => {class:"form-horizontal"} do |f| %>
+<fieldset>
+  <legend>Create a new Cohort</legend>
 
-<%= form_for @cohort do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <div class="form-group">
+      <%= f.label :name, "Name", class:"col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <%= f.text_field :name, class:"form-control", autofocus: true, placeholder: "Name"  %>
+      </div>
+    </div>
 
-  <%= f.label :roster_csv %>
-  <%= f.file_field :roster_csv %>
+    <div class="form-group">
+      <%= f.label :roster_csv, "Roster CSV File", class:"col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <%= f.file_field :roster_csv, class:"form-control" %>
+      </div>
+    </div>
 
-  <%= f.submit %>
+  <%= f.submit "Create Cohort", class:"btn btn-primary" %>
+</fieldset>
 <% end %>
+</div>

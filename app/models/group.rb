@@ -14,6 +14,8 @@ class Group < ActiveRecord::Base
         new_group.students << student
       end
     end
+
+    binding.pry
   end
 
 end

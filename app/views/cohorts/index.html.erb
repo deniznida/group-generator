@@ -1,13 +1,13 @@
 <h1>Admin Dashboard</h1>
+<div class="row">
 
-<h3>Create a New Cohort</h3>
+  <div class="col-md-5">
+    <%= render 'form' %>
+  </div>
 
-<%= render 'form' %>
+  <div class="col-md-5">
+    <h3>All Cohorts</h3>
 
-<ul>
-
-<% @cohorts.each do |cohort| %>
- <li> <%= link_to(cohort.name, cohort_path(cohort)) %></li>
-<% end %>
-
-</ul>
+    <%= render @cohorts %>
+  </div>
+</div>

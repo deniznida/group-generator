@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to student.name, student_path(student) %></td>
+  <td><%= student.email %></td>
+  <td><%= link_to student.github_username, "http://www.github.com/#{student.github_username}", :target => "_blank" %></td>
+
+  <td id="edit-or-delete-user">
+    <%= link_to 'edit', edit_student_path(student), class: 'btn btn-default btn-xs' %>
+    <%= link_to 'delete', student_path(student), class: 'btn btn-default btn-xs', method: 'delete', data: {confirm: "Are you sure you want to delete this student?"} %>
+  </td>
+</tr>
