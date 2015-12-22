@@ -63,4 +63,4 @@ end
 
 gem 'paperclip'
 gem 'figaro'
-
+gem 'bootstrap-sass', '~> 3.1.1'
