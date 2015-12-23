@@ -1,0 +1,12 @@
+<% i = 0 %>
+<% @groups.each do |group|  %>
+  <% i += 1 %>
+  <p></p>
+  <p></p>
+
+  <p><%=  i %></p>
+  <% group.students.each do |student| %>
+    <br>
+    <%=  student.name %>
+  <% end  %>
+<% end  %>

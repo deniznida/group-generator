@@ -1,0 +1,5 @@
+<h4><%= link_to cohort.name, cohort_path(cohort) %> - <%= cohort.students.count %> Students 
+
+  <%= link_to 'edit', edit_cohort_path(cohort), class: 'btn btn-default btn-xs' %> 
+  <%= link_to 'delete', cohort_path(cohort), class: 'btn btn-default btn-xs', method: 'delete', data: {confirm: "Are you sure you want to delete this cohort?"} %>
+</h4>

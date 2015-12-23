@@ -7,7 +7,7 @@ class GroupType < ActiveRecord::Base
 # pairprogram_group_type = GroupType.create({ name: "PairProgram Group"})
 # project_group_type = GroupType.create({ name: "Project Group"})
 
-  def table_or_project_group_type_size(students)
+  def self.table_or_project_group_type_size(students)
     if students % 4 == 0
       students / 4
     else
@@ -15,7 +15,7 @@ class GroupType < ActiveRecord::Base
     end
   end
 
-  def meetup_or_pair_group_type_size(students)
+  def self.meetup_or_pair_group_type_size(students)
     students / 2
   end
 end

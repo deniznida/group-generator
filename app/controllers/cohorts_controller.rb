@@ -1,6 +1,8 @@
 class CohortsController < ApplicationController
+  
 
   def index
+    @cancel_button = false
     @cohorts = Cohort.all
     @cohort = Cohort.new
   end
@@ -8,6 +10,7 @@ class CohortsController < ApplicationController
   def show
     @cohort = Cohort.find(params[:id])
     @students = @cohort.students.order('name')
+    @group_types = GroupType.all
   end
 
   def create
