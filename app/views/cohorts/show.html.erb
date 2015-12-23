@@ -3,7 +3,13 @@
 </h1>
     <br>
     <br>
-<%= render 'create' %>
+<%= form_tag("/groups", method:"POST") do %>    
+  
+  <%= render 'groups/create' %>
+  
+  <%= submit_tag "Submit" %>
+  <%= hidden_field_tag "cohort", @cohort.id %>
+<% end %>
     <br>
     <br>
 
