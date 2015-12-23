@@ -34,7 +34,7 @@ class Group < ActiveRecord::Base
       need_students = 3 - new_group.student_groups.count
 
       (0..need_students).each do |n|
-
+        
       end
 
     end
