@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
       people_per_group = 2
     end
 
-    Group.generate_groups(students, number_of_groups, people_per_group)
+    Group.generate_groups(params[:group_types], params[:group_code], students, number_of_groups, people_per_group)
   end
 
   def update

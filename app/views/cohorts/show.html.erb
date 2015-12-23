@@ -6,6 +6,7 @@
 <%= form_tag("/groups", method:"POST") do %>    
   
   <%= render 'groups/create' %>
+   <%= render 'groups/code' %>
   
   <%= submit_tag "Submit" %>
   <%= hidden_field_tag "cohort", @cohort.id %>

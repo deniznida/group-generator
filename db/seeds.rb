@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-cohort = Cohort.create({name: 'web-0915'})
+# cohort = Cohort.create({name: 'web-0915'})
 
 #Seeding Students
 
