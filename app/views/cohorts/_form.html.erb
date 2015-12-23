@@ -1,6 +1,6 @@
 <p><%= flash[:message] %></p>
 <div class="well">
-
+  
 <%= form_for @cohort, :html => {class:"form-horizontal"} do |f| %>
 <fieldset>
   <legend>Create a new Cohort</legend>
@@ -20,6 +20,11 @@
     </div>
 
   <%= f.submit "Create Cohort", class:"btn btn-primary" %>
+
+  <% if @cancel_button != false %>
+    <%= link_to 'Cancel', :back, class:"btn btn-primary" %>
+  <% end %>
+
 </fieldset>
 <% end %>
 </div>

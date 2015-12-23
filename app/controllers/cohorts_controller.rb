@@ -1,6 +1,8 @@
 class CohortsController < ApplicationController
+  
 
   def index
+    @cancel_button = false
     @cohorts = Cohort.all
     @cohort = Cohort.new
   end
