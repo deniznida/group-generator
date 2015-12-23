@@ -30,10 +30,19 @@ class GroupsController < ApplicationController
     end
 
     Group.generate_groups(params[:group_types], params[:group_code], students, number_of_groups, people_per_group)
+    
+    @code = params[:group_code]
+    redirect_to :controller => :code, :action => :index, :id => @code
+
   end
+
 
   def update
 
+  end
+
+  def show
+    binding.pry
   end
 
 end

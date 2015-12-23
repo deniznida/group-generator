@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :groups
   resources :students
+
+  get 'code/:id' => 'code#index'
   # You can have the root of your site routed with "root"
   root 'cohorts#index'
 

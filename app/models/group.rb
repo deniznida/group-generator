@@ -12,7 +12,7 @@ class Group < ActiveRecord::Base
       record.delete 
     end
 
-    binding.pry
+    # binding.pry
     (1..number_of_groups).each do |i|
       new_group = Group.new
       new_group.group_type_id = group_type_id
@@ -38,6 +38,6 @@ class Group < ActiveRecord::Base
       end
 
     end
-
+    
   end
 end
