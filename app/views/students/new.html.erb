@@ -1,0 +1,32 @@
+<%= form_for @student, :html => {class:"form-horizontal"} do |f| %>
+<fieldset>
+  <legend>Create a new Student</legend>
+
+    <div class="form-group">
+      <%= f.label :name, "Name", class:"col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <%= f.text_field :name, class:"form-control", autofocus: true, placeholder: "Name"  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Email", class:"col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <%= f.text_field :email, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Github Username", class:"col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <%= f.text_field :github_username, class:"form-control" %>
+      </div>
+    </div>
+  <%= hidden_field_tag "cohort", @cohort.id %>
+    
+  <%= f.submit "Create Student", class:"btn btn-primary" %>
+
+  <%= link_to 'Cancel', :back, class:"btn btn-primary" %>
+</fieldset>
+<% end %>
+</div>

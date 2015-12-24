@@ -1,12 +1,6 @@
 class GroupType < ActiveRecord::Base
   has_many :groups
 
-
-# table_group_type = GroupType.create({ name: "Table Group"}) 
-# meetup_group_type = GroupType.create({ name: "MeetUp Group"}) 
-# pairprogram_group_type = GroupType.create({ name: "PairProgram Group"})
-# project_group_type = GroupType.create({ name: "Project Group"})
-
   def self.min_group_size(group_type_id)
     minimun_num_of_students = { 
       "1" => 3,
@@ -14,10 +8,9 @@ class GroupType < ActiveRecord::Base
       "3" => 2,
       "4" => 3
     }
-
     minimun_num_of_students[group_type_id]
-
   end
+
 
   def self.table_or_project_group_type_size(students)
     if students % 4 == 0
@@ -27,7 +20,9 @@ class GroupType < ActiveRecord::Base
     end
   end
 
+
   def self.meetup_or_pair_group_type_size(students)
     students / 2
   end
+
 end

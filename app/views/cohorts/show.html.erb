@@ -1,5 +1,6 @@
 <h1><%= @cohort.name %>
 <%= link_to 'edit this cohort', edit_cohort_path(@cohort), class: 'btn btn-large btn-primary' %>
+<%= link_to 'add student to this cohort', new_student_path(:cohort => @cohort), class: 'btn btn-large btn-primary' %>
 </h1>
     <br>
     <br>
