@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-
   end
 
   def create
@@ -36,13 +35,10 @@ class GroupsController < ApplicationController
 
   end
 
-
   def update
-
   end
 
   def show
-    binding.pry
   end
 
 end

@@ -1,0 +1,10 @@
+<p><%= flash[:message] %></p>
+
+<div class="jumbotron text-center">
+  <h1>Welcome to Group Generator</h1>
+  <% if is_admin %>
+    <%= link_to 'Go To The Admin Dashboard', cohorts_path, class: "btn btn-success btn-large" if current_user.admin %> 
+  <% else %>
+    <%= link_to 'Sign In With Github', login_path, class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>

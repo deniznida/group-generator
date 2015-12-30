@@ -21,4 +21,5 @@ class Cohort < ActiveRecord::Base
       end
     end  
   end
+  
 end
