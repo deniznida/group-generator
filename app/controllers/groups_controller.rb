@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.select(:code, :group_type_id).joins(:students).where("cohort_id = '#{params[:cohort]}'").distinct
+    @cohort = Cohort.find(params[:cohort])
     @group_type = GroupType.all
   end
 
