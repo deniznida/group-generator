@@ -1,2 +1,1 @@
-<%= label_tag :number, "Group Code" %>
-<%= text_field_tag "group_code", current_user.github_username + Time.now.strftime('%Y%m%d') %></br>
+<%= hidden_field_tag "group_code", current_user.github_username + Time.now.strftime('%Y%m%d') %></br>

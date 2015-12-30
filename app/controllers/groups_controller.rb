@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.select(:code).joins(:students).where("cohort_id = '#{params[:cohort]}'").distinct
+    @groups = Group.select(:code, :group_type_id).joins(:students).where("cohort_id = '#{params[:cohort]}'").distinct
+    @group_type = GroupType.all
   end
 
   def new
@@ -31,10 +32,13 @@ class GroupsController < ApplicationController
       number_of_groups = GroupType.meetup_or_pair_group_type_size(student_count)
       people_per_group = 2
     end
+binding.pry
+    code_suffix = '.' + params[:group_types]
+    group_code = params[:group_code] + code_suffix
 
-    Group.generate_groups(params[:group_types], params[:group_code], students, number_of_groups, people_per_group)
+    Group.generate_groups(params[:group_types], group_code, students, number_of_groups, people_per_group)
     
-    @code = params[:group_code]
+    @code = group_code
     redirect_to :controller => :code, :action => :index, :id => @code
 
   end
