@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
     if login_user
       redirect_to_landing_page
     else
-      flash[:notice] = "Login failed!"
-      redirect_to root_path
+      flash[:message] = "You must be an admin to see the app!"
+      render "welcome/index" 
     end
   end
 
