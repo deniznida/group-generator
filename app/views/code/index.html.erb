@@ -1,12 +1,18 @@
+<h3>
+  <%= "Total number of Groups create: #{@groups.count}"%>
+  <%= link_to 'Back to Cohort', :back, class:"btn btn-primary" %>
+</h3>
+
+<br>
 <% i = 0 %>
+
 <% @groups.each do |group|  %>
   <% i += 1 %>
-  <p></p>
-  <p></p>
-
-  <p><%=  i %></p>
-  <% group.students.each do |student| %>
-    <br>
-    <%=  student.name %>
-  <% end  %>
+  <%= "Group ##{i}" %>
+  <ul>
+    <% group.students.each do |student| %>
+      <li><%=  student.name %></li> 
+    <% end  %>
+  </ul>
+  <br>
 <% end  %>

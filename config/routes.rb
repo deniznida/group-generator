@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :groups
   resources :students
 
-  get 'code/:id' => 'code#index'
+  get 'code/:id' => 'code#index', :as => 'code'
   root 'welcome#index'
 
 

@@ -1,0 +1,21 @@
+<h1>Groups for cohort : <%= @cohort.name %>
+  <%= link_to 'Back to cohort', :back, class:"btn btn-primary" %>
+</h1>
+
+<div class="col-md-5">
+  <table class="table table-striped table-hover ">
+    <tbody>
+      <% @groups.each do |group| %>
+        <tr>
+          <td>
+            <%= link_to group.code, code_path(group.code) %>
+          </td>
+          <td>
+            <% @type = GroupType.where("id = '#{group.group_type_id}'").first  %>
+            <%= @type.name %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
