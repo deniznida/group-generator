@@ -1,5 +1,9 @@
 class GroupsController < ApplicationController
 
+  def index
+    @groups = Group.select(:code).joins(:students).where("cohort_id = '#{params[:cohort]}'").distinct
+  end
+
   def new
     @cohorts = Cohort.all
     @group_types = GroupType.all
