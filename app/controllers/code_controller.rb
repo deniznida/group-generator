@@ -1,5 +1,7 @@
 class CodeController < ApplicationController
-   def index
+   
+  def index
     @groups = Group.where(code: params[:id])
   end
+
 end

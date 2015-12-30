@@ -1,19 +1,22 @@
 <h1><%= @cohort.name %>
-<%= link_to 'edit this cohort', edit_cohort_path(@cohort), class: 'btn btn-large btn-primary' %>
-<%= link_to 'add student to this cohort', new_student_path(:cohort => @cohort), class: 'btn btn-large btn-primary' %>
+  <%= link_to 'edit this cohort', edit_cohort_path(@cohort), class: 'btn btn-large btn-primary' %>
+  <%= link_to 'add student to this cohort', new_student_path(:cohort => @cohort), class: 'btn btn-large btn-primary' %>
 </h1>
-    <br>
-    <br>
+    
+  <br>
+  <br>
+
 <%= form_tag("/groups", method:"POST") do %>    
   
   <%= render 'groups/create' %>
-   <%= render 'groups/code' %>
+  <%= render 'groups/code' %>
   
   <%= submit_tag "Submit" %>
   <%= hidden_field_tag "cohort", @cohort.id %>
 <% end %>
-    <br>
-    <br>
+
+  <br>
+  <br>
 
 <table class="table table-striped">
   <thead>

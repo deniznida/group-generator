@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   before_action :require_login
  
   private
- 
     def current_user
       User.find(session[:user_id]) if session[:user_id]
     end
@@ -33,20 +32,6 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
       end
     end
-
-    # def set_from_uri
-    #   session[:from_uri] = request.env["HTTP_REFERER"]
-    # end
-
-    # def clear_from_uri
-    #   session[:from_uri] = nil
-    # end
-
-    # def redirect_to_from_uri
-    #   redirect_uri = session[:from_uri]
-    #   clear_from_uri
-    #   redirect_to redirect_uri
-    # end
 
     def login_user
       if !@user
