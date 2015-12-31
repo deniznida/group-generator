@@ -33,7 +33,7 @@ class GroupsController < ApplicationController
       number_of_groups = GroupType.meetup_or_pair_group_type_size(student_count)
       people_per_group = 2
     end
-binding.pry
+    
     code_suffix = '.' + params[:group_types]
     group_code = params[:group_code] + code_suffix
 
