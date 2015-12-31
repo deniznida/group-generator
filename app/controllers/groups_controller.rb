@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
       people_per_group = 2
     end
     
-    code_suffix = '.' + params[:group_types]
+    code_suffix = '-' + params[:group_types]
     group_code = params[:group_code] + code_suffix
 
     Group.generate_groups(params[:group_types], group_code, students, number_of_groups, people_per_group)
