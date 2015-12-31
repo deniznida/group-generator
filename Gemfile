@@ -67,3 +67,5 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'octokit', '~> 3.0'
+gem "responders"
+
